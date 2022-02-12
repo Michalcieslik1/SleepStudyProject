@@ -5,7 +5,7 @@ Created on Wed Feb  9 20:30:01 2022
 
 @author: veerlemaslowski
 
-TODO: Need to pick a sound module, a read/write file module, threading modul
+TODO: Need to pick a sound module, a read/write file module, threading module
 """
 
 
