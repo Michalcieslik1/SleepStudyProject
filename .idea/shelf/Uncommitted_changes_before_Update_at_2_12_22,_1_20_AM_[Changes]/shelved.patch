@@ -1,0 +1,19 @@
+Index: sleep_sound.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\nCreated on Wed Feb  9 20:30:01 2022\n\n@author: veerlemaslowski\n\nTODO: Need to pick a sound module, a read/write file module, threading module\n\"\"\"\n\n\n# Class that writes to the Json file to save progress of the brainwaves\nclass WriteJson:\n    # TODO: WriteJson class\n    def __init__(self):\n        pass\n\n    # @staticmethod function Save() that saves current brainwave data to Json, takes in the data\n\n    # function toJson() that translates the current data into json file\n\n\nclass Start:\n    # TODO: Start the loop class\n    def __init__(self):\n        pass\n\n    # @staticmethod function LoopStart? that is the actual loop that checks over the data every n seconds,\n    #     and either returns the result or changes the state of the program (TBD)\n\n\n# Houses the Sound that is supposed to be played, and the time that is supposed to pass b/w sounds;\nclass Sound:\n    # TODO: get(), set()\n    def __init__(self):\n        pass\n\n\n# Creates an Array of Sound objects with random sounds;\nclass SoundSequence(WriteJson, Start):\n    # TODO: init that takes in an array of possible Sound objects\n    def __init__(self):\n        pass\n\n    # Function Start() that starts playing the sequence\n\n    # Function that saves the data into the buffer, starts playing sounds if in stage 2\n\n\nclass Main():\n    # TODO: main\n    # Create all the objects\n\n    # let user choose all the read/writes\n\n    # Start the experiment\n\n    pass\n\n\nif __name__ == \"__Main__\":\n    Main()\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sleep_sound.py b/sleep_sound.py
+--- a/sleep_sound.py	(revision 2c0242e47d572850261e08a1172c0f177040d785)
++++ b/sleep_sound.py	(date 1644646783004)
+@@ -5,7 +5,7 @@
+ 
+ @author: veerlemaslowski
+ 
+-TODO: Need to pick a sound module, a read/write file module, threading module
++TODO: Need to pick a sound module, a read/write file module, threading modul
+ """
+ 
+ 
