@@ -13,9 +13,14 @@ class WriteJson:
     def __init__(self):
         pass
 
-    # @staticmethod function Save() that saves current brainwave data to Json, takes in the data
+    # @staticmethod function Save() that saves current brainwave data to Json, uses toJson()
+    @staticmethod
+    def save():
+        pass
 
     # function toJson() that translates the current data into json file
+    def toJson(self):
+        pass
 
 
 class Start:
@@ -23,30 +28,43 @@ class Start:
     def __init__(self):
         pass
 
-    # @staticmethod function LoopStart? that is the actual loop that checks over the data every n seconds,
+    # @staticmethod function startLoop() that is the actual loop that checks over the data every n seconds,
     #     and either returns the result or changes the state of the program (TBD)
+    @staticmethod
+    def startLoop():
+        pass
 
 
-# Houses the Sound that is supposed to be played, and the time that is supposed to pass b/w sounds;
+# Houses the Sound that is supposed to be played
 class Sound:
-    # TODO: get(), set()
+    # TODO: Sound class
     def __init__(self):
+        pass
+
+    # Returns the sound that's stored in the class
+    def getSound(self):
+        pass
+
+    # Plays the specific sound housed in the sound object
+    def playSound(self):
         pass
 
 
 # Creates an Array of Sound objects with random sounds;
 class SoundSequence(WriteJson, Start):
-    # TODO: init that takes in an array of possible Sound objects
+    # TODO: SoundSequence class
     def __init__(self):
-        pass
+        super().__init__()
 
     # Function Start() that starts playing the sequence
+    def start(self):
+        pass
 
     # Function that saves the data into the buffer, starts playing sounds if in stage 2
 
 
-class Main():
-    # TODO: main
+class Main:
+    # TODO: main class
     # Create all the objects
 
     # let user choose all the read/writes
