@@ -13,6 +13,12 @@ TODO: Need to pick a sound module, a read/write file module, threading module
 # Native Sound module
 # Possible sound modules: https://pythonbasics.org/python-play-sound/
 import os
+from typing import Final
+import random
+
+WAIT_MAX: Final[int] = 30
+WAIT_MIN: Final[int] = 15
+SEQUENCE_QUEUE_SIZE: Final[int] = 5
 
 
 # Class that writes to the Json file to save progress of the brainwaves
@@ -49,16 +55,16 @@ class Start:
 # Houses the Sound that is supposed to be played
 class Sound:
     soundPath = ""
-    soundName = ""
+    waitTime = 0
 
-    def __init__(self, name, path):
+    def __init__(self, path, t):
         self.soundPath = path
-        self.soundName = name
+        self.waitTime = t
         pass
 
-    # Returns the sound path that's stored in the class
-    def getSoundName(self):
-        return self.soundName
+    # Gets the time /------/
+    def getWaitTime(self):
+        return self.waitTime
         pass
 
     # Plays the specific sound housed in the sound object
@@ -69,15 +75,29 @@ class Sound:
 
 # Creates an Array of Sound objects with random sounds;
 class SoundSequence(WriteJson, Start):
-    soundQueue = []
+    soundPathArray = []
+    sequence = []
 
     # TODO: SoundSequence class
-    def __init__(self, soundarray):
-        self.soundQueue = soundarray
+    def __init__(self, path):
+        self.soundPathArray = path
+        self.createSoundSequence()
         pass
 
-    # Function createSoundSequence() that creates an array of sound objects to be played
+    # Creates the beginning sound sequence of length SEQUENCE_QUEUE_SIZE
     def createSoundSequence(self):
+        while len(self.sequence) < SEQUENCE_QUEUE_SIZE:
+            self.sequence.append(self.createSoundObject())
+        pass
+
+    # Create a sound object with a random wait time between WAIT_MIN and WAIT_MAX,
+    #    and a random sound from soundPathArray
+    def createSoundObject(self):
+        i = random.randint(0, len(self.soundPathArray) - 1)
+        path = self.soundPathArray[i]
+        t = random.randint(WAIT_MIN, WAIT_MAX)
+
+        return Sound(path, t)
         pass
 
     # Function Start() that starts playing the sequence
@@ -93,11 +113,10 @@ class SoundSequence(WriteJson, Start):
 class Main:
     # TODO: main class
     # Create all the objects
-    setupArray = [Sound("Sound1.wav", "code/assets/Sound1.wav"), Sound("Sound2.wav", "code/assets/Sound2.wav"),
-                  Sound("Sound3.wav", "code/assets/Sound3.wav")]
+    setupArray = ["code/assets/Sound1.wav", "code/assets/Sound2.wav",
+                  "code/assets/Sound3.wav"]
     soundSequence = SoundSequence(setupArray)
 
-    soundSequence.soundQueue[0].play()
     # let user choose all the read/writes
 
     # Start the experiment

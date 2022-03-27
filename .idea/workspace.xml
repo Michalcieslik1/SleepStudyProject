@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Sound class complete!:&#10;&#10;Uses native audio module to work, &#10;depends on mac's 'afplay path/to/sound' to work&#10;added a test sound Sound1.wav">
-      <change afterPath="$PROJECT_DIR$/code/assets/Sound2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/assets/Sound3.wav" afterDir="false" />
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Began the setup of the SoundSequence class,&#10;that combines Sound class with a queue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/sleep_sound.py" afterDir="false" />
     </list>
@@ -91,7 +89,7 @@
       <workItem from="1644650190713" duration="637000" />
       <workItem from="1644780882937" duration="1214000" />
       <workItem from="1644807413006" duration="1629000" />
-      <workItem from="1648397466389" duration="4096000" />
+      <workItem from="1648397466389" duration="5441000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -163,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648400575948</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Began the setup of the SoundSequence class,&#10;that combines Sound class with a queue">
+      <created>1648401619759</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1648401619761</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,9 +192,10 @@
     <MESSAGE value="general plan commit 2" />
     <MESSAGE value="Organized the files better" />
     <MESSAGE value="Sound class complete!:&#10;&#10;Uses native audio module to work, &#10;depends on mac's 'afplay path/to/sound' to work&#10;added a test sound Sound1.wav" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sound class complete!:&#10;&#10;Uses native audio module to work, &#10;depends on mac's 'afplay path/to/sound' to work&#10;added a test sound Sound1.wav" />
+    <MESSAGE value="Began the setup of the SoundSequence class,&#10;that combines Sound class with a queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Began the setup of the SoundSequence class,&#10;that combines Sound class with a queue" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648401575852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648402907043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
