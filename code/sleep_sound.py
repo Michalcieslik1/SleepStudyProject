@@ -8,7 +8,7 @@ Created on Wed Feb  9 20:30:01 2022
 Before running, in the terminal:
 - test that 'afplay /path/to/sound/' works
 -
-TODO: Need to pick a sound module, a read/write file module, threading module
+TODO: Need to pick a read/write file module, threading module
 """
 # Native Sound module
 # Possible sound modules: https://pythonbasics.org/python-play-sound/
@@ -22,10 +22,10 @@ SEQUENCE_QUEUE_SIZE: Final[int] = 5
 
 
 # Class that writes to the Json file to save progress of the brainwaves
-class WriteJson:
+class Json:
     SAVE_FILE_NAME = ""
 
-    # TODO: WriteJson class
+    # TODO: Json class
     def __init__(self, filename):
         SAVE_FILE_NAME = filename
         pass
@@ -40,8 +40,15 @@ class WriteJson:
         pass
 
 
+# Class that stores the brainwave data, and occasionally uses Json class
+class Data:
+    # TODO: Data class
+    def __init__(self):
+        pass
+
+
 class Start:
-    # TODO: Start the loop class
+    # TODO: Write multithreaded code that starts playing the sounds
     def __init__(self):
         pass
 
@@ -74,11 +81,10 @@ class Sound:
 
 
 # Creates an Array of Sound objects with random sounds;
-class SoundSequence(WriteJson, Start):
+class SoundSequence(Json, Start):
     soundPathArray = []
     sequence = []
 
-    # TODO: SoundSequence class
     def __init__(self, path):
         self.soundPathArray = path
         self.createSoundSequence()
@@ -100,14 +106,11 @@ class SoundSequence(WriteJson, Start):
         return Sound(path, t)
         pass
 
-    # Function Start() that starts playing the sequence
-    def start(self):
+    # Returns the next Sound object and adds a new random sound object
+    def pop(self):
+        self.sequence.append(self.createSoundObject())
+        return self.sequence.pop()
         pass
-
-    # Function pause() that pauses playing the sequence, allows the sequence to be continued
-    def pause(self):
-        pass
-    # Function that saves the data into the buffer, starts playing sounds if in stage 2
 
 
 class Main:
