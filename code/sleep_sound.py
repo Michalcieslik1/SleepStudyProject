@@ -14,6 +14,7 @@ TODO: Need to pick a sound module, a read/write file module, threading module
 # Possible sound modules: https://pythonbasics.org/python-play-sound/
 import os
 
+
 # Class that writes to the Json file to save progress of the brainwaves
 class WriteJson:
     SAVE_FILE_NAME = ""
@@ -68,9 +69,12 @@ class Sound:
 
 # Creates an Array of Sound objects with random sounds;
 class SoundSequence(WriteJson, Start):
+    soundQueue = []
+
     # TODO: SoundSequence class
-    def __init__(self):
-        super().__init__()
+    def __init__(self, soundarray):
+        self.soundQueue = soundarray
+        pass
 
     # Function createSoundSequence() that creates an array of sound objects to be played
     def createSoundSequence(self):
@@ -89,9 +93,11 @@ class SoundSequence(WriteJson, Start):
 class Main:
     # TODO: main class
     # Create all the objects
-    print("Hello World!")
-    test_1 = Sound("Sound1.wav", "code/assets/Sound1.wav")
-    test_1.play()
+    setupArray = [Sound("Sound1.wav", "code/assets/Sound1.wav"), Sound("Sound2.wav", "code/assets/Sound2.wav"),
+                  Sound("Sound3.wav", "code/assets/Sound3.wav")]
+    soundSequence = SoundSequence(setupArray)
+
+    soundSequence.soundQueue[0].play()
     # let user choose all the read/writes
 
     # Start the experiment
