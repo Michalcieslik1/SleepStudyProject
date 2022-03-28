@@ -12,9 +12,10 @@ TODO: Need to pick a read/write file module, threading module
 """
 # Native Sound module
 # Possible sound modules: https://pythonbasics.org/python-play-sound/
-import os
-from typing import Final
-import random
+import os                    # For playing sounds
+from typing import Final     # Final variables
+import random                # Random variables
+import json
 
 WAIT_MAX: Final[int] = 30
 WAIT_MIN: Final[int] = 15
@@ -40,7 +41,7 @@ class Json:
         pass
 
 
-# Class that stores the brainwave data, and occasionally uses Json class
+# Class that stores the brainwave data, JSON-compatible
 class Data:
     # TODO: Data class
     def __init__(self):
@@ -48,7 +49,7 @@ class Data:
 
 
 class Start:
-    # TODO: Write multithreaded code that starts playing the sounds
+    # TODO: Write multithreaded code that starts playing the sounds, possibly fixed by combining dreem usable.py
     def __init__(self):
         pass
 

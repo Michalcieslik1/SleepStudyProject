@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Continuing work on SoundSequence:&#10;&#10;- Rewrote the Sound class to include waitTime&#10;- SoundSequence now upon init creates a sound sequence inside sequence[] of size SEQUENCE_QUEUE_SIZE with random sounds and wait times">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/dreem usable.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/dreem usable.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/sleep_sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +52,29 @@
       <recent name="$PROJECT_DIR$/venv" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Dreem Usable">
+    <configuration name="Dreem Usable" type="PythonConfigurationType" factoryName="Python">
+      <module name="SleepStudyProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/dreem usable.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="sleep_sound" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="SleepStudyProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,6 +97,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.sleep_sound" />
+      <item itemvalue="Python.Dreem Usable" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -89,7 +116,8 @@
       <workItem from="1644650190713" duration="637000" />
       <workItem from="1644780882937" duration="1214000" />
       <workItem from="1644807413006" duration="1629000" />
-      <workItem from="1648397466389" duration="5956000" />
+      <workItem from="1648397466389" duration="7492000" />
+      <workItem from="1648490873165" duration="2968000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -175,7 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648403066739</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object">
+      <created>1648403622284</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1648403622284</updated>
+    </task>
+    <task id="LOCAL-00014" summary="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object">
+      <created>1648403780279</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648403780279</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,9 +243,11 @@
     <MESSAGE value="Sound class complete!:&#10;&#10;Uses native audio module to work, &#10;depends on mac's 'afplay path/to/sound' to work&#10;added a test sound Sound1.wav" />
     <MESSAGE value="Began the setup of the SoundSequence class,&#10;that combines Sound class with a queue" />
     <MESSAGE value="Continuing work on SoundSequence:&#10;&#10;- Rewrote the Sound class to include waitTime&#10;- SoundSequence now upon init creates a sound sequence inside sequence[] of size SEQUENCE_QUEUE_SIZE with random sounds and wait times" />
-    <option name="LAST_COMMIT_MESSAGE" value="Continuing work on SoundSequence:&#10;&#10;- Rewrote the Sound class to include waitTime&#10;- SoundSequence now upon init creates a sound sequence inside sequence[] of size SEQUENCE_QUEUE_SIZE with random sounds and wait times" />
+    <MESSAGE value="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object" />
+    <option name="LAST_COMMIT_MESSAGE" value="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648403309970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648490889998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648492011526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
 </project>
