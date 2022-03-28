@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Commit after some code comment updates in dreem usable.py. No functionality added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/dreem usable.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/dreem usable.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/sleep_sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +51,7 @@
       <recent name="$PROJECT_DIR$/venv" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Dreem Usable">
+  <component name="RunManager" selected="Python.sleep_sound">
     <configuration name="Dreem Usable" type="PythonConfigurationType" factoryName="Python">
       <module name="SleepStudyProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,7 +116,7 @@
       <workItem from="1644780882937" duration="1214000" />
       <workItem from="1644807413006" duration="1629000" />
       <workItem from="1648397466389" duration="7492000" />
-      <workItem from="1648490873165" duration="2968000" />
+      <workItem from="1648490873165" duration="5228000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648403780279</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Commit after some code comment updates in dreem usable.py. No functionality added">
+      <created>1648493922657</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1648493922657</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,10 +250,11 @@
     <MESSAGE value="Began the setup of the SoundSequence class,&#10;that combines Sound class with a queue" />
     <MESSAGE value="Continuing work on SoundSequence:&#10;&#10;- Rewrote the Sound class to include waitTime&#10;- SoundSequence now upon init creates a sound sequence inside sequence[] of size SEQUENCE_QUEUE_SIZE with random sounds and wait times" />
     <MESSAGE value="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object" />
-    <option name="LAST_COMMIT_MESSAGE" value="SoundSequence class completed!:&#10;&#10;- SoundSequence now has the method pop() that replaces the methods start() and pause()&#10;- pop() returns the next sound object in the sequence and adds a new random sound object to replace it.&#10;- Start class should now use SoundSequence.pop() to get the next sound object" />
+    <MESSAGE value="Commit after some code comment updates in dreem usable.py. No functionality added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit after some code comment updates in dreem usable.py. No functionality added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648490889998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648492011526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648494669083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
 </project>

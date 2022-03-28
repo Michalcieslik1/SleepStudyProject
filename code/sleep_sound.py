@@ -16,6 +16,8 @@ import os                    # For playing sounds
 from typing import Final     # Final variables
 import random                # Random variables
 import json
+from pebble import concurrent # Multithreading
+import time
 
 WAIT_MAX: Final[int] = 30
 WAIT_MIN: Final[int] = 15
@@ -26,7 +28,8 @@ SEQUENCE_QUEUE_SIZE: Final[int] = 5
 class Json:
     SAVE_FILE_NAME = ""
 
-    # TODO: Json class
+    # TODO: Instead of a JSON class, make this a class that marks when a sound is being played within z3score
+    # For reference look at mathlab code.
     def __init__(self, filename):
         SAVE_FILE_NAME = filename
         pass
@@ -43,21 +46,31 @@ class Json:
 
 # Class that stores the brainwave data, JSON-compatible
 class Data:
-    # TODO: Data class
+    # TODO: Data class, Most likely not important
     def __init__(self):
         pass
 
 
 class Start:
     # TODO: Write multithreaded code that starts playing the sounds, possibly fixed by combining dreem usable.py
-    def __init__(self):
+    def __init__(self, soundsequence):
+        self.ThisSoundSequence = soundsequence
+        self.started = False
+        self.running = False
+        self.t = 0
         pass
 
-    # @staticmethod function startLoop() that is the actual loop that checks over the data every n seconds,
+    # function loop() that is the actual loop that checks over the data every n seconds,
     #     and either returns the result or changes the state of the program (TBD)
-    @staticmethod
-    def startLoop():
-        pass
+    @concurrent.thread
+    def loop(self):
+        self.started = True
+        self.running = True
+        while self.running:
+            print(self.t)
+            pass
+
+
 
 
 # Houses the Sound that is supposed to be played
@@ -121,7 +134,8 @@ class Main:
     setupArray = ["code/assets/Sound1.wav", "code/assets/Sound2.wav",
                   "code/assets/Sound3.wav"]
     soundSequence = SoundSequence(setupArray)
-
+    loop = Start(soundSequence)
+    loop.loop()
     # let user choose all the read/writes
 
     # Start the experiment
