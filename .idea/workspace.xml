@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Attempted to implement some threading functionality, &#10;currently made a functioning counter of seconds.&#10;TODO:&#10;- make the main thread and the loop thread separate&#10;- make the main thread be able to pause, start, and stop the second thread&#10;- make the second thread play out the sound sequence">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Finally made the threading work!&#10;- switched from pebble to the threading module&#10;- changed the Start class into the ThreadedLoop class&#10;- currently, when the thread is being run, the main class continues its execution at the same time!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/sleep_sound.py" afterDir="false" />
     </list>
@@ -116,7 +116,7 @@
       <workItem from="1644780882937" duration="1214000" />
       <workItem from="1644807413006" duration="1629000" />
       <workItem from="1648397466389" duration="7492000" />
-      <workItem from="1648490873165" duration="9557000" />
+      <workItem from="1648490873165" duration="11084000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -244,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648531052269</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Finally made the threading work!&#10;- switched from pebble to the threading module&#10;- changed the Start class into the ThreadedLoop class&#10;- currently, when the thread is being run, the main class continues its execution at the same time!!">
+      <created>1648578264675</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1648578264675</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,10 +281,11 @@
     <MESSAGE value="Commit after some code comment updates in dreem usable.py. No functionality added" />
     <MESSAGE value="Commit after meeting with Z:&#10;- Changes in approach: possible JSON adn Data class not necessary&#10;- Need to mark the times the sound was played, and need to add a sound name" />
     <MESSAGE value="Attempted to implement some threading functionality, &#10;currently made a functioning counter of seconds.&#10;TODO:&#10;- make the main thread and the loop thread separate&#10;- make the main thread be able to pause, start, and stop the second thread&#10;- make the second thread play out the sound sequence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempted to implement some threading functionality, &#10;currently made a functioning counter of seconds.&#10;TODO:&#10;- make the main thread and the loop thread separate&#10;- make the main thread be able to pause, start, and stop the second thread&#10;- make the second thread play out the sound sequence" />
+    <MESSAGE value="Finally made the threading work!&#10;- switched from pebble to the threading module&#10;- changed the Start class into the ThreadedLoop class&#10;- currently, when the thread is being run, the main class continues its execution at the same time!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally made the threading work!&#10;- switched from pebble to the threading module&#10;- changed the Start class into the ThreadedLoop class&#10;- currently, when the thread is being run, the main class continues its execution at the same time!!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648577949357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648579679586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
 </project>

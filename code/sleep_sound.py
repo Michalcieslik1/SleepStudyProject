@@ -20,8 +20,8 @@ import threading
 import time
 import math
 
-WAIT_MAX: Final[int] = 30
-WAIT_MIN: Final[int] = 15
+WAIT_MAX: Final[int] = 5
+WAIT_MIN: Final[int] = 1
 SEQUENCE_QUEUE_SIZE: Final[int] = 5
 
 
@@ -53,7 +53,7 @@ class Data:
 
 
 class ThreadLoop(threading.Thread):
-    # TODO: Write multithreaded code that starts playing the sounds, possibly fixed by combining dreem usable.py
+    # TODO: Write multithreaded code that starts playing the sounds
     def __init__(self, soundsequence):
         threading.Thread.__init__(self)
         self.ThisSoundSequence = soundsequence
@@ -62,18 +62,31 @@ class ThreadLoop(threading.Thread):
         self.current_time = 0
         pass
 
-    # function run() that is the actual loop that checks over the data every n seconds,
-    #     and either returns the result or changes the state of the program (TBD)
+    # function run() that is the actual loop that plays the pre-made sequence. It runs concurrently
+    #       to main.
     def run(self):
         self.running = True
         self.start_time = time.time()
+
+        # pop the first sound object from the sequence
+        current_sound = self.ThisSoundSequence.pop()
         while self.running:
+            # calculate the amount of time passed from the starting of the iteration and print it out
             t = time.time() - self.start_time
             if math.floor(t) > self.current_time:
                 print(str(math.floor(t)) + " seconds")
+
+            # if the time passed corresponds to the sound object's wait time, play the sound, and
+            #       reset the start time to be the current time
+            if t >= current_sound.getWaitTime():
+                print("Sound played! Path to sound: " + current_sound.soundPath)
+                current_sound.play()
+                current_sound = self.ThisSoundSequence.pop()
+                self.start_time = time.time()
+
             self.current_time = math.floor(t)
             pass
-
+        # TODO: Write functions pause() and resume() in the vein of the following reference: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html
 
 # Houses the Sound that is supposed to be played
 class Sound:
@@ -138,13 +151,10 @@ class Main:
     soundSequence = SoundSequence(setupArray)
     thread = ThreadLoop(soundSequence)
 
-    loop = thread.start()
-
     # Start the experiment
-    while True:
-        print("-")
-    pass
-
+    thread.start()
+    #time.sleep(10)
+    #thread.pause()
 
 if __name__ == "__Main__":
     Main()
