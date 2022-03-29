@@ -18,6 +18,7 @@ import random                # Random variables
 import json
 from pebble import concurrent # Multithreading
 import time
+import math
 
 WAIT_MAX: Final[int] = 30
 WAIT_MIN: Final[int] = 15
@@ -55,19 +56,22 @@ class Start:
     # TODO: Write multithreaded code that starts playing the sounds, possibly fixed by combining dreem usable.py
     def __init__(self, soundsequence):
         self.ThisSoundSequence = soundsequence
-        self.started = False
         self.running = False
-        self.t = 0
+        self.start_time = 0
+        self.current_time = 0
         pass
 
     # function loop() that is the actual loop that checks over the data every n seconds,
     #     and either returns the result or changes the state of the program (TBD)
     @concurrent.thread
     def loop(self):
-        self.started = True
         self.running = True
+        self.start_time = time.time()
         while self.running:
-            print(self.t)
+            t = time.time() - self.start_time
+            if math.floor(t) > self.current_time:
+                print(str(math.floor(t)) + " seconds")
+            self.current_time = math.floor(t)
             pass
 
 
@@ -134,12 +138,14 @@ class Main:
     setupArray = ["code/assets/Sound1.wav", "code/assets/Sound2.wav",
                   "code/assets/Sound3.wav"]
     soundSequence = SoundSequence(setupArray)
-    loop = Start(soundSequence)
-    loop.loop()
+    start = Start(soundSequence)
+    loop = start.loop()
+    print(loop.result())
     # let user choose all the read/writes
 
     # Start the experiment
-
+    while True:
+        print("-")
     pass
 
 
