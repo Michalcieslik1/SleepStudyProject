@@ -14,9 +14,9 @@ The data is being recorded through Biosemi. Biosemi's data needs to be marked ev
 The marking should be handled through triggers, more info here: https://discourse.psychopy.org/t/sending-markers-to-eeg-through-serial-port/5311, as well as in the original Mathlab code
 
 ## Biosemi Codes:
-Phase start = 0
-Sound 1 played = 1
-Sound 2 played = 2
-N2 detected = 3
-Non - N2 sleep detected = 4
-Phase end = 9
+- Phase start = 0
+- Sound 1 played = 1
+- Sound 2 played = 2
+- N2 detected = 3
+- Non - N2 sleep detected = 4
+- Phase end = 9
