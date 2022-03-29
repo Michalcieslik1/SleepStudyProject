@@ -7,6 +7,7 @@
  - Possibly obsolete, Biosemi can save the brainwave data itself, but all of the info about the participant needs to still be saved and associated with the brain data somehow
 
 ### Add markers to the loop
-- The data is being recorded through Biosemi. Biosemi's data needs to be marked every time:
-#### The sleep state changes from the desired sleep state and vice versa
-#### A sound is played
+The data is being recorded through Biosemi. Biosemi's data needs to be marked every time:
+- The sleep state changes from the desired sleep state and vice versa
+- A sound is played
+The marking should be handled through triggers, more info here: https://discourse.psychopy.org/t/sending-markers-to-eeg-through-serial-port/5311
