@@ -8,6 +8,7 @@
 
 ### Add markers to the loop
 The data is being recorded through Biosemi. Biosemi's data needs to be marked every time:
+- A new file is started
 - The sleep state changes from the desired sleep state and vice versa
 - A sound is played
 The marking should be handled through triggers, more info here: https://discourse.psychopy.org/t/sending-markers-to-eeg-through-serial-port/5311, as well as in the original Mathlab code
