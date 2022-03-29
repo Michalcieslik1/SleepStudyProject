@@ -16,7 +16,7 @@ import os                    # For playing sounds
 from typing import Final     # Final variables
 import random                # Random variables
 import json
-from pebble import concurrent # Multithreading
+import threading
 import time
 import math
 
@@ -52,19 +52,19 @@ class Data:
         pass
 
 
-class Start:
+class ThreadLoop(threading.Thread):
     # TODO: Write multithreaded code that starts playing the sounds, possibly fixed by combining dreem usable.py
     def __init__(self, soundsequence):
+        threading.Thread.__init__(self)
         self.ThisSoundSequence = soundsequence
         self.running = False
         self.start_time = 0
         self.current_time = 0
         pass
 
-    # function loop() that is the actual loop that checks over the data every n seconds,
+    # function run() that is the actual loop that checks over the data every n seconds,
     #     and either returns the result or changes the state of the program (TBD)
-    @concurrent.thread
-    def loop(self):
+    def run(self):
         self.running = True
         self.start_time = time.time()
         while self.running:
@@ -73,8 +73,6 @@ class Start:
                 print(str(math.floor(t)) + " seconds")
             self.current_time = math.floor(t)
             pass
-
-
 
 
 # Houses the Sound that is supposed to be played
@@ -100,7 +98,7 @@ class Sound:
 
 
 # Creates an Array of Sound objects with random sounds;
-class SoundSequence(Json, Start):
+class SoundSequence:
     soundPathArray = []
     sequence = []
 
@@ -138,10 +136,9 @@ class Main:
     setupArray = ["code/assets/Sound1.wav", "code/assets/Sound2.wav",
                   "code/assets/Sound3.wav"]
     soundSequence = SoundSequence(setupArray)
-    start = Start(soundSequence)
-    loop = start.loop()
-    print(loop.result())
-    # let user choose all the read/writes
+    thread = ThreadLoop(soundSequence)
+
+    loop = thread.start()
 
     # Start the experiment
     while True:
