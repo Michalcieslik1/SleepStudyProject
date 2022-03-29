@@ -8,5 +8,5 @@
 
 ### Add markers to the loop
 - The data is being recorded through Biosemi. Biosemi's data needs to be marked every time:
-### The sleep state changes from the desired sleep state and vice versa
-### A sound is played
+#### The sleep state changes from the desired sleep state and vice versa
+#### A sound is played
