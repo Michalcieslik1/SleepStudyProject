@@ -56,8 +56,12 @@ class ThreadLoop(threading.Thread):
     # TODO: Write multithreaded code that starts playing the sounds
     def __init__(self, soundsequence):
         threading.Thread.__init__(self)
+        self.__flag = threading.Event()  # Flag used to pause the thread
+        self.__flag.set()  # Set flag to true
+        self.__running = threading.Event()
+        self.__running.set()
+
         self.ThisSoundSequence = soundsequence
-        self.running = False
         self.start_time = 0
         self.current_time = 0
         pass
@@ -65,12 +69,12 @@ class ThreadLoop(threading.Thread):
     # function run() that is the actual loop that plays the pre-made sequence. It runs concurrently
     #       to main.
     def run(self):
-        self.running = True
         self.start_time = time.time()
 
         # pop the first sound object from the sequence
         current_sound = self.ThisSoundSequence.pop()
-        while self.running:
+        while self.__running.is_set():
+            self.__flag.wait()
             # calculate the amount of time passed from the starting of the iteration and print it out
             t = time.time() - self.start_time
             if math.floor(t) > self.current_time:
@@ -86,7 +90,18 @@ class ThreadLoop(threading.Thread):
 
             self.current_time = math.floor(t)
             pass
-        # TODO: Write functions pause() and resume() in the vein of the following reference: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html
+
+    # TODO: Write functions pause() and resume() in the vein of the following reference: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html
+    def pause(self):
+        self.__flag.clear()  # Set to False to block the thread
+
+    def resume(self):
+        self.__flag.set()  # Set to True, let the thread stop blocking
+
+    def stop(self):
+        self.__flag.set()  # Resume the thread from the suspended state, if it is already suspended
+        self.__running.clear()  # Set to False
+
 
 # Houses the Sound that is supposed to be played
 class Sound:
@@ -153,8 +168,6 @@ class Main:
 
     # Start the experiment
     thread.start()
-    #time.sleep(10)
-    #thread.pause()
 
 if __name__ == "__Main__":
     Main()
