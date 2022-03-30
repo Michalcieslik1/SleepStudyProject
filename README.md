@@ -19,6 +19,16 @@ if BioSemi %zero out all the parallel port pins before beginning
     outputSingleScan(s,[0 0 0 0 0 0 0 0]) %reset port to zero, see timing requirement above
 end
 ```
+The line that defines s opens the port that our codes are going to be sent through. The actual code being sent happens in the following code:
+```
+ %send a trigger code (8) indicating the start of the nap phase
+    n_start = GetSecs; %log start time for output file (all trigger times in text output will be relative to this)
+    trig_time = n_start; %relative trigger time (same as above for this first instance only)
+    trig_code = fliplr((dec2bin(8,8))) - '0'; %turn the first input to (flipped) 8-bit binary vector (the string to vector conversion happens with -'0')
+    outputSingleScan(s,trig_code)
+    WaitSecs(0.004) %pulse on for 4 milliseconds; must be >than time resolution of hardware [try (1000/<EEG sampling rate>)+2ms]
+    outputSingleScan(s,[0 0 0 0 0 0 0 0]) %reset port to zero, see timing requirement above
+```
 
 #### Biosemi Codes:
 - Phase start = 0
