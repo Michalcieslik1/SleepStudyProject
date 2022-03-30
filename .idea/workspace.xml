@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Added TODOs that include a reference code for pause and resume methods for the thread">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/sleep_sound.py" afterDir="false" />
     </list>
@@ -117,7 +117,7 @@
       <workItem from="1644807413006" duration="1629000" />
       <workItem from="1648397466389" duration="7492000" />
       <workItem from="1648490873165" duration="11125000" />
-      <workItem from="1648593948383" duration="2744000" />
+      <workItem from="1648593948383" duration="5258000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -259,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648579722664</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html">
+      <created>1648646214178</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1648646214179</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,10 +298,11 @@
     <MESSAGE value="Attempted to implement some threading functionality, &#10;currently made a functioning counter of seconds.&#10;TODO:&#10;- make the main thread and the loop thread separate&#10;- make the main thread be able to pause, start, and stop the second thread&#10;- make the second thread play out the sound sequence" />
     <MESSAGE value="Finally made the threading work!&#10;- switched from pebble to the threading module&#10;- changed the Start class into the ThreadedLoop class&#10;- currently, when the thread is being run, the main class continues its execution at the same time!!" />
     <MESSAGE value="Added TODOs that include a reference code for pause and resume methods for the thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TODOs that include a reference code for pause and resume methods for the thread" />
+    <MESSAGE value="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648645972148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648646069878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
 </project>

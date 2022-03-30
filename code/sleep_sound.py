@@ -12,9 +12,9 @@ TODO: Need to pick a read/write file module, threading module
 """
 # Native Sound module
 # Possible sound modules: https://pythonbasics.org/python-play-sound/
-import os                    # For playing sounds
-from typing import Final     # Final variables
-import random                # Random variables
+import os  # For playing sounds
+from typing import Final  # Final variables
+import random  # Random variables
 import json
 import threading
 import time
@@ -35,23 +35,26 @@ class Json:
         SAVE_FILE_NAME = filename
         pass
 
-    # @staticmethod function Save() that saves current brainwave data to Json, uses toJson()
-    @staticmethod
-    def save():
-        pass
-
-    # function toJson() that translates the current data into json file
-    def toJson(self):
+    # function that saves the info from Data class to file SAVE_FILE_NAME
+    def save(self, data):
+        JSONstring = json.dumps(data)
+        file = open(self.SAVE_FILE_NAME, "w")
+        file.write(JSONstring)
+        file.close()
         pass
 
 
 # Class that stores the brainwave data, JSON-compatible
 class Data:
     # TODO: Data class, Most likely not important
-    def __init__(self):
+    def __init__(self, num, sounds, date):
+        self.subjectNum = num
+        self.soundArray = sounds
+        self.date = date
         pass
 
 
+# The loop that plays out the SoundSequences, with pause, resume, and stop functionality
 class ThreadLoop(threading.Thread):
     # TODO: Write multithreaded code that starts playing the sounds
     def __init__(self, soundsequence):
@@ -103,6 +106,7 @@ class ThreadLoop(threading.Thread):
         self.__running.clear()  # Set to False
 
 
+# -------------------------------Sound Implementation----------------------------------------
 # Houses the Sound that is supposed to be played
 class Sound:
     soundPath = ""
@@ -136,6 +140,7 @@ class SoundSequence:
         pass
 
     # Creates the beginning sound sequence of length SEQUENCE_QUEUE_SIZE
+    # TODO: the two sounds need to be played a set amount of times at random time intervals, 15 each
     def createSoundSequence(self):
         while len(self.sequence) < SEQUENCE_QUEUE_SIZE:
             self.sequence.append(self.createSoundObject())
@@ -158,8 +163,40 @@ class SoundSequence:
         pass
 
 
+# ----------------------------------Main Controller------------------------------------------
+# This class will be used by dreem usable.py to pause and resume the playing of the SoundSequence object,
+#     and send the messages into Biosemi.
+class SleepSoundController:
+
+    def __init__(self, soundPathArray, participantNum):
+        self.setupArray = soundPathArray
+        self.participantNum = participantNum
+        self.soundSequence = SoundSequence(self.setupArray)
+        self.thread = ThreadLoop(self.soundSequence)
+        pass
+
+    # TODO: Send the marker to Biosemi that the experiment started
+    # Code when phase is started = 0
+    def startExperiment(self):
+        self.thread.start()
+        pass
+
+    # TODO: Send the marker to Biosemi that the participant left the N2 stage
+    # Code when non-N2 sleep detected = 4
+    def pauseExperiment(self):
+        self.thread.pause()
+
+    pass
+
+    # TODO: Send the marker to Biosemi that the participant got to the N2 stage
+    # Code when non-N2 sleep detected = 4
+    def resumeExperiment(self):
+        self.thread.resume()
+
+    pass
+
+
 class Main:
-    # TODO: main class
     # Create all the objects
     setupArray = ["code/assets/Sound1.wav", "code/assets/Sound2.wav",
                   "code/assets/Sound3.wav"]
@@ -168,6 +205,7 @@ class Main:
 
     # Start the experiment
     thread.start()
+
 
 if __name__ == "__Main__":
     Main()
