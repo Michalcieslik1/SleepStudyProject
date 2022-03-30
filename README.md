@@ -11,12 +11,29 @@ The data is being recorded through Biosemi. Biosemi's data needs to be marked ev
 - A new file is started
 - The sleep state changes from the desired sleep state and vice versa
 - A sound is played
-The marking should be handled through triggers, more info here: https://discourse.psychopy.org/t/sending-markers-to-eeg-through-serial-port/5311, as well as in the original Mathlab code
+The marking should be handled through triggers, more info here: https://discourse.psychopy.org/t/sending-markers-to-eeg-through-serial-port/5311, as well as in the original Mathlab code. One example can be found around lines 222:
+``` 
+if BioSemi %zero out all the parallel port pins before beginning
+    s = daq.createSession('ni'); %set up the session--initialize session-based interface to NI-DAQ device for triggering
+    ch = addDigitalChannel(s,'Dev1','Port1/Line0:7','OutputOnly'); %Set up an 8-bit range as a channel to which events can be written
+    outputSingleScan(s,[0 0 0 0 0 0 0 0]) %reset port to zero, see timing requirement above
+end
+```
 
-## Biosemi Codes:
+#### Biosemi Codes:
 - Phase start = 0
 - Sound 1 played = 1
 - Sound 2 played = 2
 - N2 detected = 3
 - Non - N2 sleep detected = 4
 - Phase end = 9
+
+#### Markers are handled through signals sent through ports. 
+
+One way of doing it is through the package PsychoPy: https://discourse.psychopy.org/t/using-biosemi-usb-trigger-interface-for-sending-triggers/4605
+http://psychtoolbox.org/docs/ReceivingTriggerFromSerialPortDemo
+https://www.psychopy.org/
+https://www.psychtoolbox.net/
+
+Can we just use regular ports?
+https://pyserial.readthedocs.io/en/latest/pyserial_api.html
