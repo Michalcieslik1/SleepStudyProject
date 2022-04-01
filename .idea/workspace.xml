@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Beginning of JSON class implementation">
+      <change afterPath="$PROJECT_DIR$/Project/Main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/SaveData/Data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/SaveData/Json.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/SleepSoundController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/SoundInterface/Sound.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/SoundInterface/SoundSequence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/ThreadLoop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SleepStudyProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SleepStudyProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/sleep_sound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/assets/Sound1.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Project/assets/Sound1.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/assets/Sound2.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Project/assets/Sound2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/assets/Sound3.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Project/assets/Sound3.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/dreem usable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/dreem usable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/sleep_sound.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
@@ -40,18 +59,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/code/assets" />
-      <recent name="$PROJECT_DIR$/code" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/venv/code" />
-      <recent name="$PROJECT_DIR$/venv" />
+      <recent name="$PROJECT_DIR$/Project/SaveData" />
+      <recent name="$PROJECT_DIR$/Project/SoundInterface" />
+      <recent name="$PROJECT_DIR$/Project" />
+      <recent name="$PROJECT_DIR$/Project/Save Data" />
+      <recent name="$PROJECT_DIR$/Project/Sound Interface" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sleep_sound">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Dreem Usable" type="PythonConfigurationType" factoryName="Python">
       <module name="SleepStudyProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,7 +93,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sleep_sound" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="SleepStudyProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,12 +101,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/sleep_sound.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/Main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -97,7 +116,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sleep_sound" />
+      <item itemvalue="Python.Main" />
       <item itemvalue="Python.Dreem Usable" />
     </list>
   </component>
@@ -117,7 +136,8 @@
       <workItem from="1644807413006" duration="1629000" />
       <workItem from="1648397466389" duration="7492000" />
       <workItem from="1648490873165" duration="11125000" />
-      <workItem from="1648593948383" duration="5258000" />
+      <workItem from="1648593948383" duration="9084000" />
+      <workItem from="1648843514461" duration="924000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -266,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648646214179</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Beginning of JSON class implementation">
+      <created>1648648585795</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1648648585796</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,10 +326,12 @@
     <MESSAGE value="Finally made the threading work!&#10;- switched from pebble to the threading module&#10;- changed the Start class into the ThreadedLoop class&#10;- currently, when the thread is being run, the main class continues its execution at the same time!!" />
     <MESSAGE value="Added TODOs that include a reference code for pause and resume methods for the thread" />
     <MESSAGE value="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html" />
+    <MESSAGE value="Beginning of JSON class implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beginning of JSON class implementation" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="sleep_sound Coverage Results" MODIFIED="1648646069878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1648844412720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="Main Coverage Results" MODIFIED="1648843488867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
 </project>
