@@ -1,4 +1,5 @@
 import json
+from SaveData.Data import *
 
 
 # Class that writes to the Json file to save progress of the brainwaves
@@ -7,8 +8,10 @@ class Json:
 
     # TODO: Instead of a JSON class, make this a class that marks when a sound is being played within z3score
     # For reference look at mathlab Project.
-    def __init__(self, filename):
-        SAVE_FILE_NAME = filename
+    def __init__(self, data):
+        self.SAVE_FILE_NAME = "SAVE_DATA.txt"
+        self.data = data
+        self.save(self.data)
         pass
 
     # function that saves the info from Data class to file SAVE_FILE_NAME
@@ -18,4 +21,3 @@ class Json:
         file.write(JSONstring)
         file.close()
         pass
-

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Restructured the project for more readability:&#10;- Moved all the classes into separate files">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Began to implement the pop up functionality">
+      <change afterPath="$PROJECT_DIR$/Project/Popup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/SAVE_DATA.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SaveData/Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SaveData/Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SaveData/Json.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SaveData/Json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SleepSoundController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SleepSoundController.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +56,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Project" />
       <recent name="$PROJECT_DIR$/Project/SaveData" />
       <recent name="$PROJECT_DIR$/Project/SoundInterface" />
-      <recent name="$PROJECT_DIR$/Project" />
       <recent name="$PROJECT_DIR$/Project/Save Data" />
       <recent name="$PROJECT_DIR$/Project/Sound Interface" />
     </key>
@@ -125,7 +130,7 @@
       <workItem from="1648397466389" duration="7492000" />
       <workItem from="1648490873165" duration="11125000" />
       <workItem from="1648593948383" duration="9084000" />
-      <workItem from="1648843514461" duration="1953000" />
+      <workItem from="1648843514461" duration="6721000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -288,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648844505512</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Began to implement the pop up functionality">
+      <created>1648845499291</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1648845499292</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,10 +335,11 @@
     <MESSAGE value="Pause, resume, and stop methods SHOULD be working!&#10;Inspiration for the implementation: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html" />
     <MESSAGE value="Beginning of JSON class implementation" />
     <MESSAGE value="Restructured the project for more readability:&#10;- Moved all the classes into separate files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Restructured the project for more readability:&#10;- Moved all the classes into separate files" />
+    <MESSAGE value="Began to implement the pop up functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Began to implement the pop up functionality" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1648845333896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1648881587006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="Main Coverage Results" MODIFIED="1648843488867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
