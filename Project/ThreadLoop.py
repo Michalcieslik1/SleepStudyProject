@@ -55,3 +55,6 @@ class ThreadLoop(threading.Thread):
         self.__flag.set()  # Resume the thread from the suspended state, if it is already suspended
         self.__running.clear()  # Set to False
 
+    def isRunning(self):
+        return self.__running.is_set()
+

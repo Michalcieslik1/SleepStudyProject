@@ -1,6 +1,6 @@
 import tkinter as tk
 
-fields = 'Participant Number', 'Sounds'
+fields = 'Participant Number', 'Sounds', 'Min Sound Interval', 'Max Sound Interval'
 
 
 def fetch(entries):
@@ -8,6 +8,7 @@ def fetch(entries):
         field = entry[0]
         text = entry[1].get()
         print('%s: "%s"' % (field, text))
+        pass
 
 
 def makeForm(root, fields):
@@ -20,4 +21,5 @@ def makeForm(root, fields):
         lab.pack(side=tk.LEFT)
         ent.pack(side=tk.RIGHT, expand=tk.YES, fill=tk.X)
         entries.append((field, ent))
+        pass
     return entries

@@ -4,7 +4,7 @@ from Popup import *
 from typing import Final  # Final variables
 from SaveData.Json import *
 import tkinter as tk
-from SaveData.Data import *
+import keyboard
 from tkinter import simpledialog
 
 """
@@ -18,25 +18,24 @@ TODO: Need to pick a read/write file module, threading module
 
 Tkinter tutorial: https://realpython.com/python-gui-tkinter/#getting-multiline-user-input-with-text-widgets
 """
-WAIT_MAX: Final[int] = 5
-WAIT_MIN: Final[int] = 1
+WAIT_MAX = 0
+WAIT_MIN = 0
 SEQUENCE_QUEUE_SIZE: Final[int] = 5
 
 
 class Main:
-    # Pop up handling TODO: Finish the Pop up interface
+    # Handling of user input
     root = tk.Tk()
     ents = makeForm(root, fields)
-    # root.bind('<Return>', (lambda event, e=ents: fetch(e)))
     b2 = tk.Button(root, text='Quit', command=root.quit)
     b2.pack(side=tk.LEFT, padx=5, pady=5)
     root.mainloop()
 
-    DATA = Data()
-    DATA.soundArray = ents[1][1].get()
-    DATA.subjectNum = ents[0][1].get()
+    # Saving of the user input in a Json class
+    WAIT_MIN = int(ents[2][1].get())
+    WAIT_MAX = int(ents[3][1].get())
 
-    saveData = Json(DATA)
+    SAVE_DATA = Json(ents[1][1].get(), ents[0][1].get(), WAIT_MIN, WAIT_MAX)
 
     # Sounds used in the experiment + setup
     setupArray = ["/Users/michalcieslik/PycharmProjects/SleepStudyProject/Project/assets/Sound1.wav",
@@ -47,6 +46,8 @@ class Main:
 
     # Start the experiment
     thread.start()
+
+    pass
 
 
 if __name__ == "__Main__":
