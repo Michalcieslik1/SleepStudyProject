@@ -1,4 +1,3 @@
-import Project
 import threading
 import time
 import math
@@ -49,6 +48,7 @@ class ThreadLoop(threading.Thread):
         self.__flag.clear()  # Set to False to block the thread
 
     def resume(self):
+        self.start_time = time.time()
         self.__flag.set()  # Set to True, let the thread stop blocking
 
     def stop(self):

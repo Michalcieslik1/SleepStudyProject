@@ -1,6 +1,5 @@
 from SoundInterface.SoundSequence import *
 from ThreadLoop import *
-from Popup import *
 from typing import Final  # Final variables
 from SaveData.Json import *
 import tkinter as tk
@@ -14,6 +13,11 @@ Created on Wed Feb  9 20:30:01 2022
 
 Before running, in the terminal:
 - test that 'afplay /path/to/sound/' works
+- install the following modules:
+    - Popup
+    - Typing
+    - tkinter
+    - keyboard
 TODO: Need to pick a read/write file module, threading module
 
 Tkinter tutorial: https://realpython.com/python-gui-tkinter/#getting-multiline-user-input-with-text-widgets
@@ -24,18 +28,14 @@ SEQUENCE_QUEUE_SIZE: Final[int] = 5
 
 
 class Main:
-    # Handling of user input
-    root = tk.Tk()
-    ents = makeForm(root, fields)
-    b2 = tk.Button(root, text='Quit', command=root.quit)
-    b2.pack(side=tk.LEFT, padx=5, pady=5)
-    root.mainloop()
+    print("-------------------------(" + str(datetime.date.today()) + ")----------------------------")
+    print("Welcome to the experiment!")
+    PARTICIPANT_NUM = int(input("Please enter the participant Number:"))
+    SOUNDS = int(input("Please enter 2 integers corresponding to sounds (TODO): "))
+    WAIT_MIN = int(input("Please enter the minimum wait time between sounds:"))
+    WAIT_MAX = int(input("Please enter the maximum wait time between sounds:"))
 
-    # Saving of the user input in a Json class
-    WAIT_MIN = int(ents[2][1].get())
-    WAIT_MAX = int(ents[3][1].get())
-
-    SAVE_DATA = Json(ents[1][1].get(), ents[0][1].get(), WAIT_MIN, WAIT_MAX)
+    SAVE_DATA = Json(PARTICIPANT_NUM, SOUNDS, WAIT_MIN, WAIT_MAX)
 
     # Sounds used in the experiment + setup
     setupArray = ["/Users/michalcieslik/PycharmProjects/SleepStudyProject/Project/assets/Sound1.wav",
@@ -45,9 +45,24 @@ class Main:
     thread = ThreadLoop(soundSequence)
 
     # Start the experiment
+    input("Press enter to start the experiment")
+    print("Experiment started!")
     thread.start()
+    thread.pause()
 
-    pass
+    isRunning = False
+
+    while True:
+        if not isRunning:
+            input("------SoundSequence paused! Press enter to resume-------\n")
+            thread.resume()
+            isRunning = True
+        else:
+            input("------SoundSequence is running! Press enter to pause------\n")
+            thread.pause()
+            isRunning = False
+            pass
+        pass
 
 
 if __name__ == "__Main__":

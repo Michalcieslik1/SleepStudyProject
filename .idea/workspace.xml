@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="More Pop up functionality + beginning of JSON">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="save() and update() functionality added, made the popup window better, uses the info for min and max waiting time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Popup.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Popup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/SAVE_DATA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SAVE_DATA.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/SaveData/Data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/SaveData/Json.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SaveData/Json.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/ThreadLoop.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/ThreadLoop.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +127,12 @@
       <workItem from="1648397466389" duration="7492000" />
       <workItem from="1648490873165" duration="11125000" />
       <workItem from="1648593948383" duration="9084000" />
-      <workItem from="1648843514461" duration="10525000" />
+      <workItem from="1648843514461" duration="11568000" />
+      <workItem from="1648935609130" duration="399000" />
+      <workItem from="1649169804245" duration="2579000" />
+      <workItem from="1649441103839" duration="452000" />
+      <workItem from="1649441596205" duration="179000" />
+      <workItem from="1649441785332" duration="1579000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -307,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648881762468</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="save() and update() functionality added, made the popup window better, uses the info for min and max waiting time">
+      <created>1648923148768</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1648923148769</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,10 +353,11 @@
     <MESSAGE value="Restructured the project for more readability:&#10;- Moved all the classes into separate files" />
     <MESSAGE value="Began to implement the pop up functionality" />
     <MESSAGE value="More Pop up functionality + beginning of JSON" />
-    <option name="LAST_COMMIT_MESSAGE" value="More Pop up functionality + beginning of JSON" />
+    <MESSAGE value="save() and update() functionality added, made the popup window better, uses the info for min and max waiting time" />
+    <option name="LAST_COMMIT_MESSAGE" value="save() and update() functionality added, made the popup window better, uses the info for min and max waiting time" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1648922905364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1649443314694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="Main Coverage Results" MODIFIED="1648843488867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
