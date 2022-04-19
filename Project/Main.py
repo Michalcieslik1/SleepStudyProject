@@ -2,9 +2,6 @@ from SoundInterface.SoundSequence import *
 from ThreadLoop import *
 from typing import Final  # Final variables
 from SaveData.Json import *
-import tkinter as tk
-import keyboard
-from tkinter import simpledialog
 
 """
 Created on Wed Feb  9 20:30:01 2022

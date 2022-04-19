@@ -24,7 +24,7 @@ class ThreadLoop(threading.Thread):
         self.start_time = time.time()
 
         # pop the first sound object from the sequence
-        current_sound = self.ThisSoundSequence.pop()
+        current_sound = self.ThisSoundSequence.pop() #TODO: Guard this if sound sequence is empty
         while self.__running.is_set():
             self.__flag.wait()
             # calculate the amount of time passed from the starting of the iteration and print it out
@@ -43,7 +43,7 @@ class ThreadLoop(threading.Thread):
             self.current_time = math.floor(t)
             pass
 
-    # TODO: Write functions pause() and resume() in the vein of the following reference: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html
+    # functions pause() and resume() in the vein of the following reference: https://topic.alibabacloud.com/a/python-thread-pause-resume-exit-detail-and-example-_python_1_29_20095165.html
     def pause(self):
         self.__flag.clear()  # Set to False to block the thread
 

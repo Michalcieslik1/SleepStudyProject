@@ -1,6 +1,5 @@
 from SoundInterface.SoundSequence import *
 from ThreadLoop import *
-from SaveData.Data import *
 
 
 # This class will be used by dreem usable.py to pause and resume the playing of the SoundSequence object,
@@ -29,7 +28,7 @@ class SleepSoundController:
     pass
 
     # TODO: Send the marker to Biosemi that the participant got to the N2 stage
-    # Code when non-N2 sleep detected = 4
+    # Code when N2 sleep detected = 4
     def resumeExperiment(self):
         self.thread.resume()
 

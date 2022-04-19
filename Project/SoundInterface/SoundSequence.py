@@ -26,7 +26,7 @@ class SoundSequence:
     # Create a sound object with a random wait time between WAIT_MIN and WAIT_MAX,
     #    and a random sound from soundPathArray
     def createSoundObject(self):
-        i = random.randint(0, len(self.soundPathArray) - 1)
+        i = random.randint(0, len(self.soundPathArray) - 1) # Should pick a specific number of souds
         path = self.soundPathArray[i]
         t = random.randint(self.minWait,self.maxWait)
 
