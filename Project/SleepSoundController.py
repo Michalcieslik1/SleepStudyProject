@@ -5,13 +5,16 @@ from ThreadLoop import *
 # This class will be used by dreem usable.py to pause and resume the playing of the SoundSequence object,
 #     and send the messages into Biosemi.
 class SleepSoundController:
-    data = Data()
 
     def __init__(self, soundPathArray, participantNum):
         self.setupArray = soundPathArray
         self.participantNum = participantNum
         self.soundSequence = SoundSequence(self.setupArray)
         self.thread = ThreadLoop(self.soundSequence)
+        pass
+
+    def updateExperimentState(self, sleepStage):
+
         pass
 
     # TODO: Send the marker to Biosemi that the experiment started

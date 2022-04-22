@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Changed the input focus, instead of a pop up let's just do a simple input">
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="After meeting commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/SAVE_DATA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SAVE_DATA.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/SleepSoundController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SleepSoundController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/SoundInterface/SoundSequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SoundInterface/SoundSequence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/ThreadLoop.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/ThreadLoop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/dreem usable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/dreem usable.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +59,7 @@
       <recent name="$PROJECT_DIR$/Project/Sound Interface" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Dreem Usable">
     <configuration name="Dreem Usable" type="PythonConfigurationType" factoryName="Python">
       <module name="SleepStudyProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,12 +68,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Project" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/dreem usable.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Project/dreem usable.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,6 +134,7 @@
       <workItem from="1649441785332" duration="2475000" />
       <workItem from="1649703345871" duration="966000" />
       <workItem from="1650046243561" duration="1905000" />
+      <workItem from="1650406661167" duration="804000" />
     </task>
     <task id="LOCAL-00001" summary="Test Commit From IDE">
       <created>1644619699697</created>
@@ -327,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649443713968</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="After meeting commit">
+      <created>1650406691790</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1650406691790</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +371,8 @@
     <MESSAGE value="More Pop up functionality + beginning of JSON" />
     <MESSAGE value="save() and update() functionality added, made the popup window better, uses the info for min and max waiting time" />
     <MESSAGE value="Changed the input focus, instead of a pop up let's just do a simple input" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the input focus, instead of a pop up let's just do a simple input" />
+    <MESSAGE value="After meeting commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="After meeting commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -379,8 +385,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1650047514797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Main.coverage" NAME="Main Coverage Results" MODIFIED="1650407126225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
     <SUITE FILE_PATH="coverage/SleepStudyProject$sleep_sound.coverage" NAME="Main Coverage Results" MODIFIED="1648843488867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
-    <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1648494510162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/SleepStudyProject$Dreem_Usable.coverage" NAME="Dreem Usable Coverage Results" MODIFIED="1650407254726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Project" />
   </component>
 </project>

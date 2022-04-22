@@ -28,6 +28,7 @@ from time import time, sleep  # Time access & thread sleeping
 import multiprocessing as mp  # Multiprocessing used bc plotting is CPU intensive
 from pebble import ProcessPool  # Allows for cancelling processes, mp doesn't
 from pycfslib import create_stream_v2 as stream_data  # To encode channel data in Z3's CFS format before sending
+from SleepSoundController import *
 
 ######################################################################
 ##### INITIALIZATION
@@ -147,6 +148,9 @@ def process_and_stage(C3, C4, EOGL, EOGR, EMG, sampling_rates, token):
 if __name__ == "__main__":
     print("It's so good to see you again!")
 
+    ## Set up the SleepSoundController class
+    soundController = SleepSoundController()
+
     ## Request an auth token
     token = request_token()
 
@@ -236,6 +240,7 @@ if __name__ == "__main__":
             stage = responses[-1].result()  # looks like [stage, confidence]
             sleep_stages.append([t_stage, stage_keys[stage[0]], stage[1]])
             print("Time: %0.2f. Stage: %s. Confidence: %0.2f." % (t_stage, stage_keys[stage[0]], stage[1]))
+            # TODO: Here is where our new code would take in the stage and act accordingly.
             latency = (time() - last_staging_request_time) * 1000  # usually around 100-200
             last_call_success = True
 
@@ -249,6 +254,7 @@ if __name__ == "__main__":
                 stage = [9, 10]
                 sleep_stages.append([t_stage, stage_keys[stage[0]], stage[1]])
                 print("Time: %0.2f. Stage: %s. Confidence: %0.2f." % (t_stage, stage_keys[stage[0]], stage[1]))
+                # TODO: Here is also where our new code would take in the stage and act accordingly.
 
             last_staging_request_time = time()
             t_stage = t_now
