@@ -149,7 +149,7 @@ if __name__ == "__main__":
     print("It's so good to see you again!")
 
     ## Set up the SleepSoundController class TODO: Our code
-    #soundController = SleepSoundController()
+    soundController = SleepSoundController()
 
     ## Request an auth token
     token = request_token()
@@ -240,7 +240,10 @@ if __name__ == "__main__":
             stage = responses[-1].result()  # looks like [stage, confidence]
             sleep_stages.append([t_stage, stage_keys[stage[0]], stage[1]])
             print("Time: %0.2f. Stage: %s. Confidence: %0.2f." % (t_stage, stage_keys[stage[0]], stage[1]))
-            # TODO: Here is where our new code would take in the stage and act accordingly.
+
+            # TODO: Here is where our new code would take in the stage and act accordingly. Needs Testing
+            soundController.analyzeSleepState(stage_keys[stage[0]])
+
             latency = (time() - last_staging_request_time) * 1000  # usually around 100-200
             last_call_success = True
 
@@ -254,7 +257,9 @@ if __name__ == "__main__":
                 stage = [9, 10]
                 sleep_stages.append([t_stage, stage_keys[stage[0]], stage[1]])
                 print("Time: %0.2f. Stage: %s. Confidence: %0.2f." % (t_stage, stage_keys[stage[0]], stage[1]))
-                # TODO: Here is also where our new code would take in the stage and act accordingly.
+
+                # TODO: Here is also where our new code would take in the stage and act accordingly. Needs Testing
+                soundController.analyzeSleepState(stage_keys[stage[0]])
 
             last_staging_request_time = time()
             t_stage = t_now
