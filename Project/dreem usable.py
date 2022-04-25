@@ -148,8 +148,8 @@ def process_and_stage(C3, C4, EOGL, EOGR, EMG, sampling_rates, token):
 if __name__ == "__main__":
     print("It's so good to see you again!")
 
-    ## Set up the SleepSoundController class
-    soundController = SleepSoundController()
+    ## Set up the SleepSoundController class TODO: Our code
+    #soundController = SleepSoundController()
 
     ## Request an auth token
     token = request_token()

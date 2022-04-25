@@ -1,26 +1,59 @@
 from SoundInterface.SoundSequence import *
 from ThreadLoop import *
+from datetime import *
+from SaveData.Json import *
+from typing import Final  # Final variables
 
-
+WAIT_MAX = 0
+WAIT_MIN = 0
+SEQUENCE_QUEUE_SIZE: Final[int] = 5
 # This class will be used by dreem usable.py to pause and resume the playing of the SoundSequence object,
 #     and send the messages into Biosemi.
 class SleepSoundController:
 
-    def __init__(self, soundPathArray, participantNum):
-        self.setupArray = soundPathArray
-        self.participantNum = participantNum
-        self.soundSequence = SoundSequence(self.setupArray)
+    def __init__(self):
+        print("-------------------------(" + str(datetime.date.today()) + ")----------------------------")
+        print("Welcome to the experiment!")
+        self.participantNum = int(input("Please enter the participant Number:"))
+        sounds = int(input("Please enter 2 integers corresponding to sounds (TODO): "))
+        WAIT_MIN = int(input("Please enter the minimum wait time between sounds:"))
+        WAIT_MAX = int(input("Please enter the maximum wait time between sounds:"))
+
+        self.SAVE_DATA = Json(self.participantNum, sounds, WAIT_MIN, WAIT_MAX)
+
+        # Sounds used in the experiment + setup
+        self.setupArray = ["/Users/michalcieslik/PycharmProjects/SleepStudyProject/Project/assets/Sound1.wav",
+                           "/Users/michalcieslik/PycharmProjects/SleepStudyProject/Project/assets/Sound2.wav",
+                           "/Users/michalcieslik/PycharmProjects/SleepStudyProject/Project/assets/Sound3.wav"]
+        self.soundSequence = SoundSequence(self.setupArray, SEQUENCE_QUEUE_SIZE, WAIT_MIN, WAIT_MAX)
         self.thread = ThreadLoop(self.soundSequence)
         pass
 
-    def updateExperimentState(self, sleepStage):
+    def controllerThread(self):
+        # Start the experiment
+        input("Press enter to start the experiment")
+        print("Experiment started!")
+        self.thread.start()
 
+        isRunning = True
+
+        while True:
+            if not isRunning:
+                input("------SoundSequence paused! Press enter to resume-------\n")
+                self.thread.resume()
+                isRunning = True
+            else:
+                input("------SoundSequence is running! Press enter to pause------\n")
+                self.thread.pause()
+                isRunning = False
+                pass
+            pass
         pass
 
     # TODO: Send the marker to Biosemi that the experiment started
     # Code when phase is started = 0
     def startExperiment(self):
-        self.thread.start()
+        self.controllerThread()
         pass
 
     # TODO: Send the marker to Biosemi that the participant left the N2 stage
