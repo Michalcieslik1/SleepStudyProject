@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/SAVE_DATA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SAVE_DATA.txt" afterDir="false" />
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Tried to fix the Sound.py so that it works on Windows, does not work right now">
       <change beforePath="$PROJECT_DIR$/Project/SleepSoundController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SleepSoundController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/SoundInterface/Sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SoundInterface/Sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651522310344</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Tried to fix the Sound.py so that it works on Windows, does not work right now">
+      <created>1651523696818</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1651523696818</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +402,7 @@
     <MESSAGE value="After meeting commit" />
     <MESSAGE value="Edited the Main to be only a test class, now everything is done in SleepSoundController.py&#10;The connection between dreem usable and our code is beginning to be made" />
     <MESSAGE value="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller" />
+    <MESSAGE value="Tried to fix the Sound.py so that it works on Windows, does not work right now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tried to fix the Sound.py so that it works on Windows, does not work right now" />
   </component>
 </project>

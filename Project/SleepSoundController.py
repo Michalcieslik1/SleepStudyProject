@@ -34,7 +34,7 @@ class SleepSoundController:
 
     # Take in the sleep state and pause or restart the soundSequence
     def analyzeSleepState(self, sleepStage):
-        if sleepStage == stage_keys[0]:
+        if sleepStage == stage_keys[0]: # WARNING: Currently set up so that the sound plays when one is awake
             if not self.isRunning:
                 if not self.started:
                     self.startExperiment()
