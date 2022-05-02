@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Edited the Main to be only a test class, now everything is done in SleepSoundController.py&#10;The connection between dreem usable and our code is beginning to be made">
-      <change beforePath="$PROJECT_DIR$/.idea/SleepStudyProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SleepStudyProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f8d64f59-8498-4682-a485-222824f5ec85" name="Changes" comment="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/SAVE_DATA.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SAVE_DATA.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/SleepSoundController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SleepSoundController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/dreem_usable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/dreem_usable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/SoundInterface/Sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project/SoundInterface/Sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650910797960</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller">
+      <created>1651522310344</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1651522310344</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,22 +397,7 @@
     <MESSAGE value="Changed the input focus, instead of a pop up let's just do a simple input" />
     <MESSAGE value="After meeting commit" />
     <MESSAGE value="Edited the Main to be only a test class, now everything is done in SleepSoundController.py&#10;The connection between dreem usable and our code is beginning to be made" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited the Main to be only a test class, now everything is done in SleepSoundController.py&#10;The connection between dreem usable and our code is beginning to be made" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Project/dreem_usable.py</url>
-          <line>237</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Project/dreem_usable.py</url>
-          <line>250</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally fixed the dreem_usable.py file!!!!!!!!!&#10;- Changed time() to t.time(), which returns a float instead of time object&#10;- Added the connection to sound controller" />
   </component>
 </project>

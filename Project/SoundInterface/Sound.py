@@ -1,4 +1,5 @@
 import os
+import winsound
 
 
 # Houses the Sound that is supposed to be played
@@ -19,5 +20,6 @@ class Sound:
     # Plays the specific sound housed in the sound object
     # WARNING: afplay only works on mac. Find an alternative for Windows!
     def play(self):
-        os.system("afplay " + self.soundPath)
+        #os.system("afplay " + self.soundPath)
+        winsound.PlaySound(self.soundPath, winsound.SND_FILENAME|winsound.SND_NOSTOP)
         pass
