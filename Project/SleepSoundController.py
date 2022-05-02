@@ -2,12 +2,11 @@ from SoundInterface.SoundSequence import *
 from ThreadLoop import *
 from datetime import *
 from SaveData.Json import *
-from typing import Final  # Final variables
 from dreem_usable import stage_keys
 
 WAIT_MAX = 0
 WAIT_MIN = 0
-SEQUENCE_QUEUE_SIZE: Final[int] = 5
+SEQUENCE_QUEUE_SIZE = 5
 # This class will be used by dreem_usable.py to pause and resume the playing of the SoundSequence object,
 #     and send the messages into Biosemi.
 class SleepSoundController:
@@ -40,8 +39,8 @@ class SleepSoundController:
 
         self.isRunning = True
 
-        while True:
-            """ Use this code to test whether resume and pause functionality is working
+        #while True:
+        """ Use this code to test whether resume and pause functionality is working
             if not self.isRunning:
                 input("------SoundSequence paused! Press enter to resume-------\n")
                 self.thread.resume()
@@ -53,10 +52,10 @@ class SleepSoundController:
                 pass
             pass
             """
-            whatToDo = input("Press q to end")
-            if whatToDo == 'q':
-                self.stopExperiment()
-                break
+            #whatToDo = input("Press q to end")
+            #if whatToDo == 'q':
+                #self.stopExperiment()
+                #break
         pass
 
     # Take in the sleep state and pause or restart the soundSequence

@@ -24,7 +24,7 @@ import socket  # For connecting to ActiView
 import numpy as np
 import scipy.signal as scisig  # Used in DC block
 from requests import post  # For connecting to Z3
-from time import time, sleep  # Time access & thread sleeping
+import time as t
 import multiprocessing as mp  # Multiprocessing used bc plotting is CPU intensive
 from pebble import ProcessPool  # Allows for cancelling processes, mp doesn't
 from pycfslib import create_stream_v2 as stream_data  # To encode channel data in Z3's CFS format before sending
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     responses = []
     stage = [9, 10]
     last_call_success = False
-    last_updated_time = time()
+    last_updated_time = t.time()
 
     # This loop *must* run fast enough that all operations are completed before the buffer fills up
     while True:
@@ -225,7 +225,7 @@ if __name__ == "__main__":
         if not responses:
             print("Initiating first call to Z3.")
             latency = 0
-            last_staging_request_time = time()
+            last_staging_request_time = t.time()
             t_stage = t_now
             responses.append(executor.schedule(process_and_stage,
                                                (running_window[0, :], running_window[1, :], running_window[2, :],
@@ -244,16 +244,16 @@ if __name__ == "__main__":
             # TODO: Here is where our new code would take in the stage and act accordingly. Needs Testing
             soundController.analyzeSleepState(stage_keys[stage[0]])
 
-            latency = (time() - last_staging_request_time) * 1000  # usually around 100-200
+            latency = (t.time() - last_staging_request_time) * 1000  # usually around 100-200
             last_call_success = True
 
         # If last request did not complete in time, cancel the request and make a new one
-        if time() - last_staging_request_time > SCORING_FREQUENCY:
+        if t.time() - last_staging_request_time > SCORING_FREQUENCY:
             if not responses[-1].done():
                 responses[-1].cancel()
                 print("Warning: scoring could not be completed in time.")
                 print("Try reducing the SCORING_FREQUENCY.")
-                latency = (time() - last_staging_request_time) * 1000
+                latency = (t.time() - last_staging_request_time) * 1000
                 stage = [9, 10]
                 sleep_stages.append([t_stage, stage_keys[stage[0]], stage[1]])
                 print("Time: %0.2f. Stage: %s. Confidence: %0.2f." % (t_stage, stage_keys[stage[0]], stage[1]))
@@ -261,7 +261,7 @@ if __name__ == "__main__":
                 # TODO: Here is also where our new code would take in the stage and act accordingly. Needs Testing
                 soundController.analyzeSleepState(stage_keys[stage[0]])
 
-            last_staging_request_time = time()
+            last_staging_request_time = t.time()
             t_stage = t_now
             responses.append(executor.schedule(process_and_stage,
                                                (running_window[0, :], running_window[1, :], running_window[2, :],

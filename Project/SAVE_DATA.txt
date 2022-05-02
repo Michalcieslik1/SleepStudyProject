@@ -1,1 +1,1 @@
-{"Subject Number": 34, "Sounds": 4, "Date": "2022-04-25", "Min Wait Time": 2, "Max Wait Time": 4, "Brain Wave Data": {}}
+{"Subject Number": 4, "Sounds": 3, "Date": "2022-05-02", "Min Wait Time": 2, "Max Wait Time": 5, "Brain Wave Data": {}}
